@@ -1,3 +1,4 @@
+<div id="game"> <!-- included so we can call it from ajax: $('#game').html(msg); -->
 <h1>Blackjack!</h1>
 
 <p>Welcome <%= session[:player_name] %></p>
@@ -10,7 +11,7 @@
   </p>
 <% end %>
 
-<div class="well">
+<div class="well" id="dealer_area">
   <h4>Dealer's cards:</h4>
   <% session[:dealer_cards].each_with_index do |card, i| %>
     <% if session[:turn] != "dealer" && i == 0 %>
@@ -23,7 +24,7 @@
   <% if @show_dealer_hit_button %>
     <p>
     <h5>Dealer has <%= calculate_total(session[:dealer_cards])%> and will hit </h5>
-      <form action ='/game/dealer/hit' method='post'>
+      <form id="dealer_hit_form" action ='/game/dealer/hit' method='post'>
       <input type='submit' class='btn btn-primary' value='Click to see dealer card &rarr;'/>
       </form>
     </p>
@@ -31,7 +32,7 @@
 </div>
 
 <br/>
-<div class="well">
+<div class="well" id="player_area">
   <h4>Player's cards:</h4>
   <% session[:player_cards].each do |card| %>
     <%= card_image(card) %>
@@ -61,3 +62,4 @@
   </form>
 <% end %>
 </p>
+</div>

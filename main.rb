@@ -27,9 +27,8 @@ helpers do
 
     # Correct for Aces
     arr.select{|e| e == 'A'}.count.times do
-      if total > 21
+      break if total <= BLACKJACK_AMOUNT
         total -= 10
-      end
     end
 
     total
@@ -153,13 +152,13 @@ post '/game/player/hit' do
     loser!("It looks like #{session[:player_name]} busted at #{player_total}.")
   end
 
-  erb :game
+  erb :game, layout: false # to not render the layout.erb, only game.erb, so it's not reloading the layout.erb when we trigger the ajax action
 end
 
 post '/game/player/stay' do
   @success = "#{session[:player_name]} has chosen to stay."
   @show_hit_or_stay_buttons = false
-  redirect'/game/dealer'
+  redirect '/game/dealer'
 end
 
 get '/game/dealer' do
@@ -181,7 +180,7 @@ get '/game/dealer' do
     @show_dealer_hit_button = true
   end
 
-  erb :game
+  erb :game, layout: false
 end
 
 post '/game/dealer/hit' do
