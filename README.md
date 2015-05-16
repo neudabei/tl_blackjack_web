@@ -1,7 +1,7 @@
 # Welcome to 21 Blackjack #
 ## An App using Ruby, Sinatra, jQuery/Ajax, HTML, CSS - based on the gotealeaf.com tutorial ##
 
-Deployed at: https://arcane-retreat-4919.herokuapp.com/
+Deployed at: https://tl-blackjack-web.herokuapp.com/
 
 
 ### Instructions for App ###
