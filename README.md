@@ -1,8 +1,10 @@
 # Welcome to 21 Blackjack #
-* An App using Ruby, Sinatra, jQuery/Ajax, HTML, CSS - based on the gotealeaf.com tutorial *
+## An App using Ruby, Sinatra, jQuery/Ajax, HTML, CSS - based on the gotealeaf.com tutorial ##
+
+Deployed at: https://arcane-retreat-4919.herokuapp.com/
 
 
-### Instructions for App ##
+### Instructions for App ###
 
 1. Make sure the 'sinatra' gem is installed.
 2. From the command line, you can start the server by 'ruby main.rb'
