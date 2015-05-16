@@ -49,14 +49,12 @@
       <%= session[:player_name] %> has $<%= session[:player_pot] %> and bet $<%= session[:player_bet] %> this round.
     </h5>
   </div>
+  
   <br/>
-
   <p>
   <%= session[:player_name]%> has <%=calculate_total(session[:player_cards]) %>
-
   <br/>
   <br/>
-
   <% if @show_hit_or_stay_buttons %>
     <br/>
     What would <%= session[:player_name] %> like to do?
