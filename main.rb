@@ -109,8 +109,8 @@ get '/bet' do
   if session[:player_pot] == 0
     redirect'/game_over'
   else
-  session[:player_bet] = nil # this clears/resets the bet amount when player comes back after clicking "play again"
-  erb :bet
+    session[:player_bet] = nil # this clears/resets the bet amount when player comes back after clicking "play again"
+    erb :bet
   end
 end
 
