@@ -1,5 +1,5 @@
-# Welcome to 21 Blackjack #
-## An App using Ruby, Sinatra, jQuery/Ajax, HTML, CSS - based on the gotealeaf.com tutorial ##
+# 21 Blackjack #
+## An App using Ruby, Sinatra, jQuery/Ajax, HTML, CSS - based on the [gotealeaf.com](http://www.gotealeaf.com) tutorial ##
 
 Deployed at: https://tl-blackjack-web.herokuapp.com/
 
@@ -11,6 +11,3 @@ Deployed at: https://tl-blackjack-web.herokuapp.com/
 3. If you have the 'shotgun' gem installed, you can instead run 'shotgun main.rb'
 4. ctrl+c to stop the server
 
-
-*Things to fix*
-- When no bet money is left (=0), display error message accordingly, not "Bet amount cannot be greater than what you have ($0)"

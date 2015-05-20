@@ -2,7 +2,7 @@
 
   <%if @loser %>
     <div class="alert alert-error"><%=@loser%></div>
-    <%elsif @winner %>
+  <%elsif @winner %>
     <div class="alert alert-success"><%=@winner%></div>  
   <% end %>
 
@@ -44,27 +44,18 @@
     <% session[:player_cards].each do |card| %>
       <%= card_image(card) %>
     <% end %>
-
-    <h5>
-      <%= session[:player_name] %> has $<%= session[:player_pot] %> and bet $<%= session[:player_bet] %> this round.
-    </h5>
   </div>
   
-  <br/>
   <p>
-  <%= session[:player_name]%> has <%=calculate_total(session[:player_cards]) %>
-  <br/>
-  <br/>
-  <% if @show_hit_or_stay_buttons %>
-    <br/>
-    What would <%= session[:player_name] %> like to do?
-    <br/>
-    <form id="hit_form" action="/game/player/hit" method="post">
-      <input type="submit" class="btn btn-success" value="Hit"/>
-    </form>
-    <form id="stay_form" action="/game/player/stay" method="post">
-      <input type="submit" class="btn btn-warning" value="Stay"/>
-    </form>
-  <% end %>
+    <%= session[:player_name] %> has $<%= session[:player_pot] %> and bet $<%= session[:player_bet] %> this round. <%= session[:player_name]%>'s cards add up to <%=calculate_total(session[:player_cards]) %>.
+    <% if @show_hit_or_stay_buttons %>
+         <h4> What would <%= session[:player_name] %> like to do? </h4>
+      <form id="hit_form" action="/game/player/hit" method="post">
+        <input type="submit" class="btn btn-success btn-large" value="Hit"/>
+      </form>
+      <form id="stay_form" action="/game/player/stay" method="post">
+        <input type="submit" class="btn btn-warning btn-large" value="Stay"/>
+      </form>
+    <% end %>
   </p>
 </div>

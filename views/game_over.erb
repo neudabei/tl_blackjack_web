@@ -1,4 +1,7 @@
-<h3>Thanks for playing!</h3>
-Maybe it's time to hit Vegas?
-
+<% if session[:player_pot] == 0 %>
+  <h3>Sorry, looks like you're broke and have no money left for another round.</h3>
+<% else %>
+  <h3>Thanks for playing, <%= session[:player_name] %>!<br>
+  You are leaving the table with $<%= session[:player_pot] %>.</h3>
+<% end %>
 <a href ="/new_player">Start over</a>

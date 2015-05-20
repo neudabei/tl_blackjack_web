@@ -67,7 +67,7 @@ helpers do
     @show_hit_or_stay_buttons = false
     session[:player_pot] = session[:player_pot] - session[:player_bet]
     @loser = "<strong>#{session[:player_name]} loses.</strong> #{msg}"
-  end
+   end
 
   def tie!(msg)
     @play_again = true
@@ -106,8 +106,12 @@ post '/new_player' do
 end
 
 get '/bet' do
+  if session[:player_pot] == 0
+    redirect'/game_over'
+  else
   session[:player_bet] = nil # this clears/resets the bet amount when player comes back after clicking "play again"
   erb :bet
+  end
 end
 
 post '/bet' do
